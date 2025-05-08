@@ -1,0 +1,69 @@
+# Игнорировать директории с результатами обучения (чекпойнты, логи)
+# Вся папка 'out-custom-long' будет проигнорирована
+4_myGPT_train/nanoGPT/out-custom-long/
+# Вся папка 'out-custom-small' будет проигнорирована
+4_myGPT_train/nanoGPT/out-custom-small/
+# Вся папка 'out-shakespeare-char' будет проигнорирована
+4_myGPT_train/nanoGPT/out-shakespeare-char/
+
+# Если ты хочешь игнорировать ТОЛЬКО большие файлы в этих папках (например, .cpkt)
+# но сохранить при этом логи или файлы конфигурации, можно использовать такие правила:
+# 4_myGPT_train/nanoGPT/out-custom-long/*.cpkt
+# 4_myGPT_train/nanoGPT/out-custom-long/*.pt # возможно модель сохраняется в .pt
+# 4_myGPT_train/nanoGPT/out-custom-long/*.ckpt # или такое расширение
+# Игнорировать все остальные файлы в этой папке, кроме тех, что перечислены выше (например, *.log, config.json)
+# 4_myGPT_train/nanoGPT/out-custom-long/*
+# !4_myGPT_train/nanoGPT/out-custom-long/*.log
+# !4_myGPT_train/nanoGPT/out-custom-long/config.json
+# !4_myGPT_train/nanoGPT/out-custom-long/README.md # если там есть README
+
+# Выбирай один из подходов: либо игнорировать всю папку (проще), либо игнорировать только большие файлы (точнее).
+# Первый вариант (игнорировать всю папку out-...) более распространен для больших результатов обучения.
+
+# Игнорировать бинарные файлы данных в папках data
+4_myGPT_train/nanoGPT/data/custom_corpus/*.bin
+4_myGPT_train/nanoGPT/data/shakespeare_char/*.bin
+
+# --- Общие исключения для проектов на Python ---
+
+# Игнорировать скомпилированные файлы Python
+__pycache__/
+*.pyc
+
+# Игнорировать директории виртуальных окружений
+venv/
+.venv/
+env/
+myenv/
+.conda/ # Для Miniconda/Anaconda
+
+# Игнорировать артефакты сборки
+build/
+dist/
+*.egg-info/
+*.dist-info/
+
+# Игнорировать файлы редакторов/IDE
+.vscode/
+.idea/
+*.swp # Vim swap files
+*.swo # Vim swap files
+
+# Игнорировать файлы операционных систем
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# Игнорировать файлы с переменными окружения (часто содержат чувствительную информацию)
+.env
+.flaskenv
+
+# Игнорировать любые другие файлы моделей по расширению, если они не в игнорируемых папках
+# **/*.ckpt
+# **/*.safetensors
+# **/*.pth
+# **/*.h5 # Keras/TensorFlow HDF5 model files
+
+# Игнорировать большие файлы, если они не попали под другие правила
+# Например, если у тебя есть большой файл в корне или другой папке
+# my_large_data_file.csv
+# results.pkl

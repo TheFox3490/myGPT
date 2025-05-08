@@ -1,0 +1,33 @@
+{
+    "vocab_size": 262145,
+    "bos_token_id": 2,
+    "eos_token_id": 1,
+    "source_files": [
+        "../myGPTdistr/generated_articles_jsonl",
+        "../myGPTWiki/selected_wiki_jsonl/selected_wiki_articles.jsonl",
+        "../myGPTWiki/generated_wiki_articles"
+    ],
+    "train_val_split": 0.9,
+    "tokenizer_model": "google/gemma-3-27b-it",
+    "total_articles_processed_attempts": 283779,
+    "total_articles_successfully_processed": 283779,
+    "total_articles_skipped": 0,
+    "total_tokens_in_output_including_special": 291771779,
+    "train_token_count": 262523721,
+    "val_token_count": 29248058,
+    "average_tokens_per_article_by_source_without_special": {
+        "generated_original": 746.1203772189349,
+        "wiki_original": 1049.7886931754301,
+        "wiki_generated": 611.219565029027
+    },
+    "article_counts_by_source": {
+        "generated_original": 5408,
+        "wiki_original": 266830,
+        "wiki_generated": 11541
+    },
+    "token_counts_by_source_without_special": {
+        "generated_original": 4035019,
+        "wiki_original": 280115117,
+        "wiki_generated": 7054085
+    }
+}
